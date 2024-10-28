@@ -3,3 +3,4 @@ export type Expense = {
     name: string;
     cost: number;
 };
+
