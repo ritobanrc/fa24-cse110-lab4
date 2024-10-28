@@ -21,8 +21,6 @@ export function createExpenseServer(req: Request, res: Response, expenses: Expen
 export function deleteExpense(req: Request, res: Response, expenses: Expense[]) {
     const id = req.params.id;
 
-    console.log("deleting: " + id);
-
     if (!id) {
         return res.status(400).send({ error: "Missing id" });
     }
