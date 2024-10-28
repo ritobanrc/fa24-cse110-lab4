@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
-import { expenses } from "./constants";
+import { budget, expenses } from "./constants";
+import { createBudgetEndpoints } from "./budget/budget-endpoints";
 import { createExpenseEndpoints } from "./expenses/expense-endpoints";
 
 const express = require("express");
@@ -22,4 +23,5 @@ app.get("/", (req: Request, res: Response) => {
   res.status(200);
 });
 
+createBudgetEndpoints(app, budget);
 createExpenseEndpoints(app, expenses);
