@@ -25,7 +25,6 @@ test('create expense', () => {
   expect(expenseItem).toBeInTheDocument();
   expect(expenseItem).toHaveTextContent('Test Expense');
   expect(expenseItem).toHaveTextContent('$100');
-  
 });
 
 
