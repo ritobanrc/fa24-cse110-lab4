@@ -15,12 +15,20 @@ export function createExpenseServer(req: Request, res: Response, expenses: Expen
     };
 
     expenses.push(newExpense);
-        console.log("GOOD RQUESTKj:wa");
     res.status(201).send(newExpense);
 }
 
 export function deleteExpense(req: Request, res: Response, expenses: Expense[]) {
-    // TO DO: Implement deleteExpense function
+    const id = req.params.id;
+
+    console.log("deleting: " + id);
+
+    if (!id) {
+        return res.status(400).send({ error: "Missing id" });
+    }
+
+    expenses.splice(expenses.findIndex(e => e.id === id), 1);
+    res.status(200).send();
 }
 
 export function getExpenses(req: Request, res: Response, expenses: Expense[]) {
