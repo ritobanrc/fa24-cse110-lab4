@@ -36,7 +36,7 @@ export const fetchExpenses = async (): Promise<Expense[]> => {
 	// Parsing the response to get the data
 	let expenseList = response.json().then((jsonResponse) => {
     	console.log("data in fetchExpenses", jsonResponse);
-    	return jsonResponse.data;
+    	return jsonResponse;
 	});
 
 	console.log("response in fetchExpenses", expenseList);
